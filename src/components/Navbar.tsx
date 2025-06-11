@@ -36,17 +36,17 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass py-4' : 'bg-transparent py-6'
+        isScrolled ? 'glass py-3' : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto container-padding flex items-center justify-between">
         {/* Logo */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="text-2xl font-outfit font-bold text-gradient cursor-pointer"
+          whileHover={{ scale: 1.02 }}
+          className="text-xl font-space font-bold text-gradient cursor-pointer tracking-tight"
           onClick={() => scrollToSection('#hero')}
         >
-          Siva.dev
+          &lt;SR/&gt;
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -59,9 +59,10 @@ const Navbar = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
               onClick={() => scrollToSection(item.href)}
-              className="text-gray-300 hover:text-gold transition-colors duration-300 font-medium"
+              className="text-slate-300 hover:text-accent transition-colors duration-300 font-medium font-inter relative group"
             >
               {item.name}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full"></span>
             </motion.button>
           ))}
         </div>
@@ -73,14 +74,14 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => scrollToSection('#contact')}
-          className="hidden md:block bg-gradient-to-r from-cherry to-wine px-6 py-2 rounded-full text-white font-medium hover:glow-red transition-all duration-300"
+          className="hidden md:block bg-gradient-to-r from-primary to-indigo-600 px-6 py-2.5 rounded-lg text-white font-medium hover:glow-primary transition-all duration-300 shadow-lg"
         >
-          Let's Talk
+          Collaborate
         </motion.button>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-300 hover:text-gold transition-colors"
+          className="md:hidden text-slate-300 hover:text-accent transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,16 +107,16 @@ const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-gold transition-colors duration-300 font-medium text-left"
+                className="text-slate-300 hover:text-accent transition-colors duration-300 font-medium text-left font-inter"
               >
                 {item.name}
               </button>
             ))}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-gradient-to-r from-cherry to-wine px-6 py-2 rounded-full text-white font-medium mt-4"
+              className="bg-gradient-to-r from-primary to-indigo-600 px-6 py-2.5 rounded-lg text-white font-medium mt-4 shadow-lg"
             >
-              Let's Talk
+              Collaborate
             </button>
           </div>
         </motion.div>
