@@ -63,6 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// Custom color palette
+				wine: 'rgb(139 69 19)',
+				cherry: 'rgb(185 28 28)',
+				gold: 'rgb(251 191 36)',
+				dark: {
+					100: 'rgb(15 23 42)',
+					200: 'rgb(8 12 23)',
+					300: 'rgb(2 6 23)'
+				},
 				// Professional CS color palette
 				slate: {
 					900: '#0f172a',
@@ -94,6 +103,7 @@ export default {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 				'space': ['Space Grotesk', 'sans-serif'],
+				'outfit': ['Space Grotesk', 'sans-serif'],
 				'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
 			},
 			borderRadius: {
@@ -140,10 +150,10 @@ export default {
 				},
 				'glow-pulse': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(99, 102, 241, 0.2)'
+						boxShadow: '0 0 20px rgba(139, 69, 19, 0.2)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(99, 102, 241, 0.4)'
+						boxShadow: '0 0 40px rgba(139, 69, 19, 0.4)'
 					}
 				},
 				'float': {

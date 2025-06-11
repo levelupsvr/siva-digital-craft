@@ -43,9 +43,9 @@ const Hero = () => {
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden grid-pattern">
       {/* Sophisticated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-indigo-500/3 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-wine/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-cherry/3 rounded-full blur-2xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
@@ -101,7 +101,7 @@ const Hero = () => {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToProjects}
-              className="bg-gradient-to-r from-primary to-indigo-600 px-8 py-4 rounded-lg text-white font-semibold text-lg glow-primary hover:glow-primary transition-all duration-300 min-w-[200px] shadow-xl"
+              className="bg-gradient-to-r from-wine to-cherry px-8 py-4 rounded-lg text-white font-semibold text-lg glow-primary hover:glow-primary transition-all duration-300 min-w-[200px] shadow-xl"
             >
               View Projects
             </motion.button>
@@ -110,7 +110,7 @@ const Hero = () => {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToContact}
-              className="glass-light px-8 py-4 rounded-lg text-accent font-semibold text-lg border border-accent/30 hover:border-accent hover:glow-accent transition-all duration-300 min-w-[200px]"
+              className="glass-light px-8 py-4 rounded-lg text-gold font-semibold text-lg border border-gold/30 hover:border-gold hover:glow-accent transition-all duration-300 min-w-[200px]"
             >
               Get In Touch
             </motion.button>
@@ -157,12 +157,12 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center"
+              className="w-6 h-10 border-2 border-wine/50 rounded-full flex justify-center"
             >
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="w-1 h-3 bg-primary rounded-full mt-2"
+                className="w-1 h-3 bg-wine rounded-full mt-2"
               ></motion.div>
             </motion.div>
           </motion.div>
