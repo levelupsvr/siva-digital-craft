@@ -1,5 +1,5 @@
-
 import type { Config } from "tailwindcss";
+import animate from 'tailwindcss-animate';
 
 export default {
 	darkMode: ["class"],
@@ -89,7 +89,22 @@ export default {
 				emerald: {
 					500: '#10b981',
 					400: '#34d399'
-				}
+				},
+				sapphire: {
+					DEFAULT: '#30507D', // Primary brand color
+				},
+				royalblue: {
+					DEFAULT: '#112250', // Accent or deep background
+				},
+				quicksand: {
+					DEFAULT: '#447F98', // Highlight/CTA
+				},
+				swanwing: {
+					DEFAULT: '#F5F0E9', // Soft background
+				},
+				shellstone: {
+					DEFAULT: '#D8C8C2', // Neutral background
+				},
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
@@ -174,5 +189,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	 plugins: [animate],
 } satisfies Config;

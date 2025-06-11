@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 
 const Skills = () => {
@@ -91,11 +90,11 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden">
+    <section id="skills" className="py-20 relative overflow-hidden bg-royalblue">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-cherry/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sapphire/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-quicksand/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -110,13 +109,13 @@ const Skills = () => {
             variants={itemVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-quicksand mb-6">
               Skills & Expertise
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-swanwing max-w-3xl mx-auto">
               A comprehensive overview of my technical skills, certifications, and soft skills
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-cherry to-gold mx-auto mt-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-sapphire to-quicksand mx-auto mt-6"></div>
           </motion.div>
 
           {/* Technical Skills */}
@@ -124,7 +123,7 @@ const Skills = () => {
             variants={itemVariants}
             className="mb-20"
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-gold mb-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
               Technical Skills
             </h3>
             
@@ -133,11 +132,11 @@ const Skills = () => {
                 <motion.div
                   key={index}
                   whileHover={{ y: -10 }}
-                  className="glass-light rounded-2xl p-6 hover-lift"
+                  className="bg-shellstone rounded-2xl p-6 hover-lift"
                 >
                   <div className="text-center mb-6">
                     <div className="text-4xl mb-3">{category.icon}</div>
-                    <h4 className="text-xl font-outfit font-semibold text-white">
+                    <h4 className="text-xl font-outfit font-semibold text-sapphire">
                       {category.title}
                     </h4>
                   </div>
@@ -146,15 +145,15 @@ const Skills = () => {
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex}>
                         <div className="flex justify-between mb-2">
-                          <span className="text-gray-300 font-medium">{skill.name}</span>
-                          <span className="text-gold text-sm">{skill.level}%</span>
+                          <span className="text-royalblue font-medium">{skill.name}</span>
+                          <span className="text-quicksand text-sm">{skill.level}%</span>
                         </div>
-                        <div className="w-full bg-dark-300 rounded-full h-2">
+                        <div className="w-full bg-swanwing rounded-full h-2">
                           <motion.div
                             initial={{ width: 0 }}
                             whileInView={{ width: `${skill.level}%` }}
                             transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                            className="bg-gradient-to-r from-cherry to-gold h-2 rounded-full"
+                            className="bg-gradient-to-r from-sapphire to-quicksand h-2 rounded-full"
                           />
                         </div>
                       </div>
@@ -170,7 +169,7 @@ const Skills = () => {
             variants={itemVariants}
             className="mb-20"
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-gold mb-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
               Certifications
             </h3>
             
@@ -179,13 +178,13 @@ const Skills = () => {
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
-                  className="glass-light rounded-2xl p-8 hover-lift text-center"
+                  className="bg-shellstone rounded-2xl p-8 hover-lift text-center"
                 >
                   <div className="text-5xl mb-4">{cert.icon}</div>
-                  <h4 className="text-xl font-outfit font-semibold text-white mb-2">
+                  <h4 className="text-xl font-outfit font-semibold text-sapphire mb-2">
                     {cert.title}
                   </h4>
-                  <p className="text-gold font-medium">{cert.issuer}</p>
+                  <p className="text-quicksand font-medium">{cert.issuer}</p>
                 </motion.div>
               ))}
             </div>
@@ -195,7 +194,7 @@ const Skills = () => {
           <motion.div
             variants={itemVariants}
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-gold mb-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
               Soft Skills & Leadership
             </h3>
             
@@ -204,17 +203,17 @@ const Skills = () => {
                 <motion.div
                   key={index}
                   whileHover={{ x: 10 }}
-                  className="glass-light rounded-2xl p-6 hover-lift"
+                  className="bg-shellstone rounded-2xl p-6 hover-lift"
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cherry to-wine rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white font-bold">✓</span>
+                    <div className="w-12 h-12 bg-gradient-to-br from-sapphire to-quicksand rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-swanwing font-bold">✓</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-outfit font-semibold text-white mb-2">
+                      <h4 className="text-xl font-outfit font-semibold text-sapphire mb-2">
                         {item.skill}
                       </h4>
-                      <p className="text-gray-400 leading-relaxed">
+                      <p className="text-royalblue leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -229,32 +228,32 @@ const Skills = () => {
             variants={itemVariants}
             className="mt-20"
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-gold mb-12 text-center">
+            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
               Community Involvement
             </h3>
             
-            <div className="glass-light rounded-2xl p-8 max-w-4xl mx-auto">
+            <div className="bg-shellstone rounded-2xl p-8 max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xl font-outfit font-semibold text-white mb-4">
+                  <h4 className="text-xl font-outfit font-semibold text-sapphire mb-4">
                     Event Contributions
                   </h4>
-                  <ul className="space-y-3 text-gray-300">
+                  <ul className="space-y-3 text-royalblue">
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-cherry rounded-full"></div>
-                      <span><strong className="text-gold">TEDxMITS</strong> – Tech support and AV setup</span>
+                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
+                      <span><strong className="text-quicksand">TEDxMITS</strong> – Tech support and AV setup</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-cherry rounded-full"></div>
-                      <span><strong className="text-gold">Shreshta Fest</strong> – Creatives and event logistics</span>
+                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
+                      <span><strong className="text-quicksand">Shreshta Fest</strong> – Creatives and event logistics</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-cherry rounded-full"></div>
-                      <span><strong className="text-gold">IEEE YESS</strong> – Design and venue management</span>
+                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
+                      <span><strong className="text-quicksand">IEEE YESS</strong> – Design and venue management</span>
                     </li>
                     <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-cherry rounded-full"></div>
-                      <span><strong className="text-gold">Varnam Cultural Fest</strong> – Score updates and scheduling</span>
+                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
+                      <span><strong className="text-quicksand">Varnam Cultural Fest</strong> – Score updates and scheduling</span>
                     </li>
                   </ul>
                 </div>
@@ -262,7 +261,7 @@ const Skills = () => {
                 <div className="flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-6xl mb-4">🤝</div>
-                    <p className="text-gray-400 text-lg">
+                    <p className="text-royalblue text-lg">
                       Active contributor to college communities and flagship events
                     </p>
                   </div>

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -87,11 +86,11 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative overflow-hidden">
+    <section id="projects" className="py-20 relative overflow-hidden bg-swanwing">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-wine/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-sapphire/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-quicksand/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -106,13 +105,13 @@ const Projects = () => {
             variants={itemVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-sapphire mb-6">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-royalblue max-w-3xl mx-auto">
               A showcase of my recent work in web development, UI/UX design, and cybersecurity
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-cherry to-gold mx-auto mt-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-sapphire to-quicksand mx-auto mt-6"></div>
           </motion.div>
 
           {/* Projects Grid */}
@@ -122,8 +121,8 @@ const Projects = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className={`glass-light rounded-2xl p-8 hover-lift cursor-pointer transition-all duration-500 ${
-                  activeProject === index ? 'ring-2 ring-cherry glow-red' : ''
+                className={`rounded-2xl p-8 hover-lift cursor-pointer transition-all duration-500 ${
+                  activeProject === index ? 'ring-2 ring-quicksand' : 'bg-shellstone'
                 }`}
                 onClick={() => setActiveProject(index)}
               >
@@ -135,35 +134,35 @@ const Projects = () => {
                       <div className="flex items-center space-x-3 mb-2">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                           project.status === 'Live' 
-                            ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-blue-500/20 text-blue-400'
+                            ? 'bg-sapphire/20 text-sapphire' 
+                            : 'bg-quicksand/20 text-quicksand'
                         }`}>
                           {project.status}
                         </span>
-                        <span className="text-sm text-gold">{project.category}</span>
+                        <span className="text-sm text-quicksand">{project.category}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-xl md:text-2xl font-outfit font-bold text-white mb-4 line-clamp-2">
+                <h3 className="text-xl md:text-2xl font-outfit font-bold text-royalblue mb-4 line-clamp-2">
                   {project.title}
                 </h3>
 
                 {/* Project Description */}
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-sapphire mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="text-gold font-semibold mb-3">Key Features:</h4>
+                  <h4 className="text-quicksand font-semibold mb-3">Key Features:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {project.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-cherry rounded-full"></div>
-                        <span className="text-sm text-gray-400">{feature}</span>
+                        <div className="w-1.5 h-1.5 bg-sapphire rounded-full"></div>
+                        <span className="text-sm text-royalblue">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -171,12 +170,12 @@ const Projects = () => {
 
                 {/* Tech Stack */}
                 <div>
-                  <h4 className="text-gold font-semibold mb-3">Technologies:</h4>
+                  <h4 className="text-quicksand font-semibold mb-3">Technologies:</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-wine/20 text-white rounded-full text-sm border border-wine/30"
+                        className="px-3 py-1 bg-swanwing text-sapphire rounded-full text-sm border border-shellstone"
                       >
                         {tech}
                       </span>
@@ -188,7 +187,7 @@ const Projects = () => {
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
-                  className="h-1 bg-gradient-to-r from-cherry to-gold mt-6 rounded-full origin-left"
+                  className="h-1 bg-gradient-to-r from-sapphire to-quicksand mt-6 rounded-full origin-left"
                 />
               </motion.div>
             ))}
@@ -199,7 +198,7 @@ const Projects = () => {
             variants={itemVariants}
             className="text-center mt-16"
           >
-            <p className="text-gray-400 mb-6">
+            <p className="text-royalblue mb-6">
               Want to see more of my work or collaborate on a project?
             </p>
             <motion.a
@@ -208,7 +207,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-cherry to-wine px-8 py-4 rounded-full text-white font-semibold glow-red hover:glow-red transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-sapphire to-quicksand px-8 py-4 rounded-full text-swanwing font-semibold hover:opacity-90 transition-all duration-300"
             >
               <span>View GitHub Profile</span>
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

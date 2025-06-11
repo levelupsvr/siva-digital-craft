@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -53,11 +52,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-dark-300 border-t border-wine/20">
+    <footer className="relative overflow-hidden bg-royalblue border-t border-sapphire/20">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cherry/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-sapphire/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-quicksand/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 py-16 relative z-10">
@@ -70,10 +69,10 @@ const Footer = () => {
               viewport={{ once: true }}
               className="mb-6"
             >
-              <h3 className="text-3xl font-outfit font-bold text-gradient mb-4">
+              <h3 className="text-3xl font-outfit font-bold text-quicksand mb-4">
                 Sivanandana R
               </h3>
-              <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+              <p className="text-swanwing text-lg leading-relaxed max-w-md">
                 Frontend Developer & UI/UX Enthusiast passionate about creating 
                 exceptional digital experiences. Currently pursuing B.Tech CSE at MITS, Kerala.
               </p>
@@ -95,7 +94,7 @@ const Footer = () => {
                   rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-12 h-12 bg-wine/20 border border-wine/30 rounded-xl flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold/50 transition-all duration-300"
+                  className="w-12 h-12 bg-shellstone/60 border border-quicksand/40 rounded-xl flex items-center justify-center text-sapphire hover:text-quicksand hover:border-quicksand transition-all duration-300"
                   title={link.name}
                 >
                   {link.icon}
@@ -110,7 +109,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl font-outfit font-semibold text-gold mb-6"
+              className="text-xl font-outfit font-semibold text-quicksand mb-6"
             >
               Quick Links
             </motion.h4>
@@ -125,7 +124,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-400 hover:text-gold transition-colors duration-300 text-left"
+                    className="text-swanwing hover:text-quicksand transition-colors duration-300 text-left"
                   >
                     {link.name}
                   </button>
@@ -140,7 +139,7 @@ const Footer = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-xl font-outfit font-semibold text-gold mb-6"
+              className="text-xl font-outfit font-semibold text-quicksand mb-6"
             >
               Get In Touch
             </motion.h4>
@@ -149,7 +148,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="space-y-3 text-gray-400"
+              className="space-y-3 text-swanwing"
             >
               <p>📧 levelupsvr24@gmail.com</p>
               <p>📱 +91-70126-06729</p>
@@ -164,14 +163,14 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="border-t border-wine/20 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-sapphire/20 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-swanwing text-sm mb-4 md:mb-0">
             © {currentYear} Sivanandana R. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-6">
-            <p className="text-gray-400 text-sm">
+            <p className="text-swanwing text-sm">
               Built with ❤️ using React & Tailwind CSS
             </p>
             
@@ -180,7 +179,7 @@ const Footer = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 bg-gradient-to-r from-cherry to-wine rounded-full flex items-center justify-center text-white hover:glow-red transition-all duration-300"
+              className="w-10 h-10 bg-gradient-to-r from-sapphire to-quicksand rounded-full flex items-center justify-center text-swanwing hover:shadow-lg transition-all duration-300"
               title="Back to top"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

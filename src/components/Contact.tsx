@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -43,12 +42,7 @@ const Contact = () => {
       value: "levelupsvr24@gmail.com",
       link: "mailto:levelupsvr24@gmail.com"
     },
-    {
-      icon: "📱",
-      label: "Phone",
-      value: "+91-70126-06729",
-      link: "tel:+917012606729"
-    },
+  
     {
       icon: "💼",
       label: "GitHub",
@@ -60,6 +54,12 @@ const Contact = () => {
       label: "LinkedIn",
       value: "sivanandana-r-pillai",
       link: "https://linkedin.com/in/sivanandana-r-pillai-86b0822b3"
+    },
+    {
+      icon: "📸",
+      label: "Instagram",
+      value: "_level_up_svr",
+      link: "https://www.instagram.com/_level_up_svr?igsh=eDgwaHZ4aTNpMGxn"
     }
   ];
 
@@ -86,11 +86,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden bg-swanwing">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cherry/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sapphire/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-quicksand/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -105,13 +105,13 @@ const Contact = () => {
             variants={itemVariants}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-gradient mb-6">
+            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-sapphire mb-6">
               Let's Connect
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-royalblue max-w-3xl mx-auto">
               Ready to collaborate? Have a project in mind? Let's discuss how we can work together to create something amazing.
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-cherry to-gold mx-auto mt-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-sapphire to-quicksand mx-auto mt-6"></div>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -121,10 +121,10 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-gold mb-8">
+                <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-quicksand mb-8">
                   Get In Touch
                 </h3>
-                <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                <p className="text-royalblue text-lg mb-8 leading-relaxed">
                   I'm always open to discussing new opportunities, interesting projects, 
                   or just having a chat about technology and design. Feel free to reach out 
                   through any of the channels below.
@@ -140,17 +140,17 @@ const Contact = () => {
                     target={contact.link.startsWith('http') ? '_blank' : undefined}
                     rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                     whileHover={{ x: 10, scale: 1.02 }}
-                    className="flex items-center space-x-4 glass-light p-6 rounded-xl hover-lift group"
+                    className="flex items-center space-x-4 bg-shellstone p-6 rounded-xl hover:shadow-lg transition-shadow group"
                   >
                     <div className="text-3xl">{contact.icon}</div>
                     <div>
-                      <div className="text-gold font-semibold">{contact.label}</div>
-                      <div className="text-gray-300 group-hover:text-white transition-colors">
+                      <div className="text-quicksand font-semibold">{contact.label}</div>
+                      <div className="text-royalblue group-hover:text-sapphire transition-colors">
                         {contact.value}
                       </div>
                     </div>
                     <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-                      <svg className="w-5 h-5 text-cherry" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-sapphire" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </div>
@@ -161,13 +161,13 @@ const Contact = () => {
               {/* Quick Response Promise */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="glass-light p-6 rounded-xl border border-gold/20"
+                className="bg-shellstone p-6 rounded-xl border border-quicksand/40"
               >
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="text-2xl">⚡</div>
-                  <h4 className="text-xl font-outfit font-semibold text-gold">Quick Response</h4>
+                  <h4 className="text-xl font-outfit font-semibold text-quicksand">Quick Response</h4>
                 </div>
-                <p className="text-gray-300">
+                <p className="text-royalblue">
                   I typically respond to messages within 24 hours. Looking forward to hearing from you!
                 </p>
               </motion.div>
@@ -176,9 +176,9 @@ const Contact = () => {
             {/* Contact Form */}
             <motion.div
               variants={itemVariants}
-              className="glass-light p-8 rounded-2xl"
+              className="bg-shellstone p-8 rounded-2xl"
             >
-              <h3 className="text-2xl font-outfit font-semibold text-white mb-8">
+              <h3 className="text-2xl font-outfit font-semibold text-sapphire mb-8">
                 Send a Message
               </h3>
 
@@ -186,7 +186,7 @@ const Contact = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-green-500/20 border border-green-500/30 text-green-400 p-4 rounded-xl mb-6"
+                  className="bg-quicksand/20 border border-quicksand/40 text-sapphire p-4 rounded-xl mb-6"
                 >
                   ✅ Message sent successfully! I'll get back to you soon.
                 </motion.div>
@@ -195,7 +195,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-gold font-medium mb-2">
+                    <label htmlFor="name" className="block text-quicksand font-medium mb-2">
                       Your Name
                     </label>
                     <input
@@ -205,13 +205,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full bg-dark-300 border border-wine/30 rounded-xl px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                      className="w-full bg-swanwing border border-quicksand/40 rounded-xl px-4 py-3 text-sapphire focus:border-sapphire focus:outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-gold font-medium mb-2">
+                    <label htmlFor="email" className="block text-quicksand font-medium mb-2">
                       Email Address
                     </label>
                     <input
@@ -221,14 +221,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full bg-dark-300 border border-wine/30 rounded-xl px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                      className="w-full bg-swanwing border border-quicksand/40 rounded-xl px-4 py-3 text-sapphire focus:border-sapphire focus:outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-gold font-medium mb-2">
+                  <label htmlFor="subject" className="block text-quicksand font-medium mb-2">
                     Subject
                   </label>
                   <input
@@ -238,13 +238,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full bg-dark-300 border border-wine/30 rounded-xl px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                    className="w-full bg-swanwing border border-quicksand/40 rounded-xl px-4 py-3 text-sapphire focus:border-sapphire focus:outline-none transition-colors"
                     placeholder="Project Collaboration"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-gold font-medium mb-2">
+                  <label htmlFor="message" className="block text-quicksand font-medium mb-2">
                     Message
                   </label>
                   <textarea
@@ -254,7 +254,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full bg-dark-300 border border-wine/30 rounded-xl px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full bg-swanwing border border-quicksand/40 rounded-xl px-4 py-3 text-sapphire focus:border-sapphire focus:outline-none transition-colors resize-none"
                     placeholder="Tell me about your project or just say hello!"
                   />
                 </div>
@@ -266,13 +266,13 @@ const Contact = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 ${
                     isSubmitting
-                      ? 'bg-gray-600 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-cherry to-wine hover:glow-red'
-                  } text-white`}
+                      ? 'bg-sapphire/50 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-sapphire to-quicksand hover:opacity-90'
+                  } text-swanwing`}
                 >
                   {isSubmitting ? (
                     <div className="flex items-center justify-center space-x-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 border-2 border-swanwing/30 border-t-swanwing rounded-full animate-spin"></div>
                       <span>Sending...</span>
                     </div>
                   ) : (

@@ -1,8 +1,19 @@
+/* --- Brand Color Palette --- */
+:root {
+  --sapphire:   #30507D;
+  --royalblue:  #112250;
+  --quicksand:  #447F98;
+  --swanwing:   #F5F0E9;
+  --shellstone: #D8C8C2;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background: var(--swanwing);
+  color: var(--sapphire);
 }
 
 .logo {
@@ -10,12 +21,29 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  background: var(--shellstone);
+  border-radius: 1.5em;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--sapphire));
+  background: var(--quicksand);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+  background: var(--shellstone);
+  border-radius: 1em;
+  box-shadow: 0 2px 8px 0 var(--royalblue);
+  color: var(--royalblue);
+}
+
+.read-the-docs {
+  color: var(--quicksand);
 }
 
 @keyframes logo-spin {
@@ -31,12 +59,4 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
