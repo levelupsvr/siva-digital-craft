@@ -210,3 +210,28 @@
   padding-left: clamp(1rem, 4vw, 2rem);
   padding-right: clamp(1rem, 4vw, 2rem);
 }
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Add to your global CSS */
+@keyframes float {
+  0%, 100% { transform: translateY(0px);}
+  50% { transform: translateY(-20px);}
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-gradient {
+  background: linear-gradient(270deg, #fff, #a3bffa, #fff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-move 4s ease-in-out infinite;
+}
