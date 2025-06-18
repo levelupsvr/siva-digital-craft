@@ -22,12 +22,15 @@ const Footer = () => {
         </svg>
       )
     },
+    
     {
-      name: 'Email',
-      url: 'mailto:levelupsvr24@gmail.com',
+      name: 'Instagram',
+      url: 'https://www.instagram.com/_level_up_svr?igsh=eDgwaHZ4aTNpMGxn',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <rect width="20" height="20" x="2" y="2" rx="5" strokeWidth={2} />
+          <circle cx="12" cy="12" r="5" strokeWidth={2} />
+          <circle cx="17" cy="7" r="1.5" fill="currentColor" />
         </svg>
       )
     }
