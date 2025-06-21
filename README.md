@@ -1,24 +1,26 @@
 # Sivanandana R Pillai – Portfolio
 
-🔗 **Live:** [siva-digital-craft.netlify.app](https://siva-digital-craft.netlify.app)
+🔗 **Live Site:** [https://portfolioproject-svr.netlify.app](https://portfolioproject-svr.netlify.app)
 
 ---
 
 ## 🚀 Features
 
-- Terminal-style animated hero section  
-- Gradient-animated name heading  
-- Responsive layout with floating background blobs  
-- Smooth scroll and interactive buttons  
-- SEO meta tags, Open Graph, and Twitter Card support  
-- Custom favicon inspired by personal features  
+- 🖥️ Terminal-style animated hero section  
+- 🎨 Gradient-animated name heading  
+- 📱 Fully responsive layout with animated background blobs  
+- 🧭 Smooth scrolling and interactive button effects  
+- 📈 SEO-friendly with meta tags, Open Graph, and Twitter Card support  
+- 🧩 Custom favicon inspired by personal traits  
 
 ---
 
 ## 🛠️ Notable Fixes
 
-- Fixed favicon visibility across all browsers  
-- Improved mobile layout and performance  
-- Corrected color contrast and overflow issues  
-- Optimized font loading and scroll indicator alignment  
-- Fixed meta tag rendering for better social sharing  
+- ✅ Favicon visibility ensured across browsers  
+- ✅ Mobile layout improved for better usability  
+- ✅ Fixed color contrast issues and unwanted overflows  
+- ✅ Optimized font loading for performance  
+- ✅ Corrected meta tag rendering for accurate link previews  
+
+---
