@@ -1,275 +1,198 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+const techCategories = [
+  {
+    title: 'Frontend Development',
+    icon: '💻',
+    skills: [
+      { name: 'React', level: 'Expert', pct: 90 },
+      { name: 'Next.js', level: 'Expert', pct: 85 },
+      { name: 'HTML/CSS', level: 'Expert', pct: 95 },
+      { name: 'JavaScript', level: 'Expert', pct: 90 },
+    ],
+  },
+  {
+    title: 'Backend Development',
+    icon: '🔧',
+    skills: [
+      { name: 'Node.js', level: 'Intermediate', pct: 75 },
+      { name: 'Python', level: 'Expert', pct: 85 },
+      { name: 'SQL', level: 'Intermediate', pct: 80 },
+    ],
+  },
+  {
+    title: 'Tools & Platforms',
+    icon: '🛠️',
+    skills: [
+      { name: 'Git + GitHub', level: 'Expert', pct: 90 },
+      { name: 'VS Code', level: 'Expert', pct: 95 },
+      { name: 'Docker', level: 'Intermediate', pct: 70 },
+    ],
+  },
+  {
+    title: 'UI/UX & Design',
+    icon: '🎨',
+    skills: [
+      { name: 'Figma', level: 'Expert', pct: 90 },
+      { name: 'Photoshop', level: 'Intermediate', pct: 85 },
+      { name: 'UI/UX Design', level: 'Intermediate', pct: 85 },
+    ],
+  },
+];
+
+const softSkills = [
+  {
+    icon: '🗣️',
+    title: 'Communication',
+    description:
+      'Effectively conveyed ideas while designing event visuals and leading collaborative tech teams. Known for simplifying complex ideas into understandable formats.',
+  },
+  {
+    icon: '🤝',
+    title: 'Teamwork & Collaboration',
+    description:
+      'Worked with diverse teams across college fests and hackathons. Seamlessly blended creative and technical roles to deliver results.',
+  },
+  {
+    icon: '🧠',
+    title: 'Problem Solving',
+    description:
+      'Approached real-time issues with logical thinking during event coordination and software projects. Enjoys debugging and finding scalable solutions.',
+  },
+  {
+    icon: '📅',
+    title: 'Time Management',
+    description:
+      'Balanced academic life with multiple leadership roles, consistently delivering tasks before deadlines with quality.',
+  },
+  {
+    icon: '🎯',
+    title: 'Leadership',
+    description:
+      'Led design, tech, and coordination teams for flagship events. Empowered team members with clear direction and creative freedom.',
+  },
+  {
+    icon: '📣',
+    title: 'Marketing & Outreach',
+    description:
+      'Promoted campus events using visually appealing digital assets, interactive posts, and social media campaigns.',
+  },
+  {
+    icon: '📊',
+    title: 'Organization',
+    description:
+      'Organized assets, schedules, and workflows for events like TEDx and Shreshta, ensuring seamless delivery and team alignment.',
+  },
+];
+
+const containerAnim = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemAnim = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: "💻",
-      skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "Vue.js", level: 75 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "TypeScript", level: 80 }
-      ]
-    },
-    {
-      title: "Backend & Database",
-      icon: "⚙️",
-      skills: [
-        { name: "Node.js", level: 75 },
-        { name: "Python", level: 85 },
-        { name: "Java", level: 80 },
-        { name: "C", level: 70 },
-        { name: "SQL", level: 80 }
-      ]
-    },
-    {
-      title: "Design & Tools",
-      icon: "🎨",
-      skills: [
-        { name: "Figma", level: 90 },
-        { name: "Photoshop", level: 85 },
-        { name: "Canva", level: 95 },
-        { name: "UI/UX Design", level: 85 }
-      ]
-    },
-    {
-      title: "Development Tools",
-      icon: "🛠️",
-      skills: [
-        { name: "Git", level: 90 },
-        { name: "GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-        { name: "DevOps", level: 70 }
-      ]
-    }
-  ];
-
-  const certifications = [
-    {
-      title: "Linguaskill Business English Certification",
-      issuer: "Cambridge",
-      icon: "🏆"
-    },
-    {
-      title: "Cryptography and Hashing in Python and Java",
-      issuer: "Udemy",
-      icon: "🔐"
-    }
-  ];
-
-  const softSkills = [
-    { skill: "Communication", description: "Created newsletters and visuals for events" },
-    { skill: "Coordination", description: "Led tech and design teams for fests" },
-    { skill: "PR & Marketing", description: "Promoted and publicized major events" },
-    { skill: "Management", description: "Balanced leadership roles with academic success" }
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
+  const [showSoft, setShowSoft] = useState(false);
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden bg-royalblue">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sapphire/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-quicksand/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {/* Section Header */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center mb-16"
+    <section id="skills" className="py-16 px-4 bg-royalblue text-swanwing">
+      <div className="max-w-6xl mx-auto space-y-10">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <h2 className="text-4xl font-outfit font-bold text-quicksand">
+            {showSoft ? 'Soft Skills' : 'Tech Stack'}
+          </h2>
+          <button
+            onClick={() => setShowSoft(!showSoft)}
+            className="bg-sapphire text-white px-4 py-2 rounded-md hover:bg-sapphire/80 transition font-semibold"
           >
-            <h2 className="text-4xl md:text-6xl font-outfit font-bold text-quicksand mb-6">
-              Skills & Expertise
-            </h2>
-            <p className="text-xl text-swanwing max-w-3xl mx-auto">
-              A comprehensive overview of my technical skills, certifications, and soft skills
-            </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-sapphire to-quicksand mx-auto mt-6"></div>
-          </motion.div>
+            {showSoft ? 'Show Tech Stack' : 'Show Soft Skills'}
+          </button>
+        </div>
 
-          {/* Technical Skills */}
+        {/* Tech Stack Section */}
+        {!showSoft ? (
           <motion.div
-            variants={itemVariants}
-            className="mb-20"
+            variants={containerAnim}
+            initial="hidden"
+            whileInView="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
-              Technical Skills
-            </h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {skillCategories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -10 }}
-                  className="bg-shellstone rounded-2xl p-6 hover-lift"
-                >
-                  <div className="text-center mb-6">
-                    <div className="text-4xl mb-3">{category.icon}</div>
-                    <h4 className="text-xl font-outfit font-semibold text-sapphire">
-                      {category.title}
-                    </h4>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-royalblue font-medium">{skill.name}</span>
-                          <span className="text-quicksand text-sm">{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-swanwing rounded-full h-2">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                            className="bg-gradient-to-r from-sapphire to-quicksand h-2 rounded-full"
-                          />
-                        </div>
+            {techCategories.map((cat, i) => (
+              <motion.div
+                key={i}
+                variants={itemAnim}
+                whileHover={{ scale: 1.03 }}
+                className="bg-shellstone rounded-2xl p-6 shadow-lg hover:shadow-2xl transition"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">{cat.icon}</span>
+                  <h3 className="text-xl font-semibold text-sapphire">
+                    {cat.title}
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {cat.skills.map((s, j) => (
+                    <div key={j} className="space-y-1">
+                      <div className="flex justify-between text-sm font-medium">
+                        <span className="text-royalblue">{s.name}</span>
+                        <span className="text-quicksand">{s.level}</span>
                       </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Certifications */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-20"
-          >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
-              Certifications
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {certifications.map((cert, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-shellstone rounded-2xl p-8 hover-lift text-center"
-                >
-                  <div className="text-5xl mb-4">{cert.icon}</div>
-                  <h4 className="text-xl font-outfit font-semibold text-sapphire mb-2">
-                    {cert.title}
-                  </h4>
-                  <p className="text-quicksand font-medium">{cert.issuer}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Soft Skills */}
-          <motion.div
-            variants={itemVariants}
-          >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
-              Soft Skills & Leadership
-            </h3>
-            
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {softSkills.map((item, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ x: 10 }}
-                  className="bg-shellstone rounded-2xl p-6 hover-lift"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-sapphire to-quicksand rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-swanwing font-bold">✓</span>
+                      <div className="w-full h-2 bg-swanwing rounded-full">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${s.pct}%` }}
+                          transition={{ duration: 0.8, delay: j * 0.1 }}
+                          className="h-full bg-gradient-to-r from-sapphire to-quicksand rounded-full"
+                        />
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xl font-outfit font-semibold text-sapphire mb-2">
-                        {item.skill}
-                      </h4>
-                      <p className="text-royalblue leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
-
-          {/* Volunteering Section */}
+        ) : (
+          // Soft Skills Section
           <motion.div
-            variants={itemVariants}
-            className="mt-20"
+            variants={containerAnim}
+            initial="hidden"
+            whileInView="visible"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
-            <h3 className="text-2xl md:text-3xl font-outfit font-semibold text-sapphire mb-12 text-center">
-              Community Involvement
-            </h3>
-            
-            <div className="bg-shellstone rounded-2xl p-8 max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
+            {softSkills.map((skill, i) => (
+              <motion.div
+                key={i}
+                variants={itemAnim}
+                whileHover={{ scale: 1.02 }}
+                className="bg-shellstone rounded-xl p-5 shadow-md hover:shadow-lg transition text-left flex gap-4 items-start"
+              >
+                <div className="text-3xl">{skill.icon}</div>
                 <div>
-                  <h4 className="text-xl font-outfit font-semibold text-sapphire mb-4">
-                    Event Contributions
+                  <h4 className="text-sapphire font-semibold text-lg mb-1">
+                    {skill.title}
                   </h4>
-                  <ul className="space-y-3 text-royalblue">
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
-                      <span><strong className="text-quicksand">TEDxMITS</strong> – Tech support and AV setup</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
-                      <span><strong className="text-quicksand">Shreshta Fest</strong> – Creatives and event logistics</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
-                      <span><strong className="text-quicksand">IEEE YESS</strong> – Design and venue management</span>
-                    </li>
-                    <li className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-sapphire rounded-full"></div>
-                      <span><strong className="text-quicksand">Varnam Cultural Fest</strong> – Score updates and scheduling</span>
-                    </li>
-                  </ul>
+                  <p className="text-royalblue text-sm leading-relaxed">
+                    {skill.description}
+                  </p>
                 </div>
-                
-                <div className="flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">🤝</div>
-                    <p className="text-royalblue text-lg">
-                      Active contributor to college communities and flagship events
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </motion.div>
-        </motion.div>
+        )}
       </div>
     </section>
   );
